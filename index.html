@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ぱけ</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans JP', sans-serif;
+        box-sizing: border-box;
+      }
+      .title {
+        text-align: center;
+      }
+      .buy {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+      }
+      .buy-title {
+        font-size: 25px;
+      }
+      .input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+      }
+      .input input {
+        margin-bottom: 5px;
+        border-radius: 5px;
+        border: 1px solid #000;
+      }
+      .buy-btn {
+        margin-left: 10px;
+        padding: 0 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        opacity: 0.6;
+        background: linear-gradient(35deg, #0bf, #0fb);
+        transition: all 0.6s;
+        cursor: pointer;
+      }
+      .buy-btn:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">ぱけ</h1>
+    <div class="buy">
+      <p class="buy-title">購入</p>
+      <form action="https://api.staticforms.xyz/submit" method="post" style="display: flex;">
+        <input type="hidden" name="accessKey" value="49df3188-019c-4833-b275-3d6d4ee4630f">
+        <div class="input">
+          <input type="email" name="email" placeholder="メールアドレス" required>
+          <input type="text" name="$code" placeholder="アマギフのコード" required>
+        </div>
+        <input type="submit" value="購入" class="buy-btn">
+      </form>
+    </div>
+  </body>
+</html>
