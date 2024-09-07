@@ -11,10 +11,49 @@
         font-family: 'Noto Sans JP', sans-serif;
         box-sizing: border-box;
       }
-      .title {
+      header {
+        position: sticky;
+        width: 100%;
+        top: 0;
+        display: flex;
+        padding: 15px;
+        background:rgba(0,170,170,0.9);
+        align-items: center;
+        justify-content: space-around;
+      }
+      .header-title {
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+      }
+      .header-link {
+        margin-left: 20px;
+        padding: 5px 10px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.6s;
+      }
+      .header-link:hover {
+        background-color: #fff;
+        color: #0aa;
+      }
+      .welcome {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #present {
+        height: 100vh;
         text-align: center;
       }
-      .buy {
+      #sale {
+        height: 100vh;
+        text-align: center;
+      }
+      #buy {
         height: 100vh;
         display: flex;
         align-items: center;
@@ -26,18 +65,18 @@
       }
       .input {
         display: flex;
-        align-items: center;
         justify-content: center;
         flex-flow: column;
       }
-      .input input {
+      .buy-input {
         margin-bottom: 5px;
         border-radius: 5px;
         border: 1px solid #000;
       }
       .buy-btn {
-        margin-left: 10px;
-        padding: 0 20px;
+        margin-top: 38%;
+        margin-left: 35%;
+        padding: 5px 10px;
         font-size: 18px;
         border-radius: 10px;
         border: none;
@@ -50,20 +89,69 @@
       .buy-btn:hover {
         opacity: 1;
       }
+      footer {
+        text-align: center;
+      }
+      .none-txt {
+        text-align: center;
+      }
+      hr {
+        margin: 15px;
+      }
     </style>
   </head>
   <body>
-    <h1 class="title">ぱけ</h1>
-    <div class="buy">
-      <p class="buy-title">購入</p>
-      <form action="https://api.staticforms.xyz/submit" method="post" style="display: flex;">
-        <input type="hidden" name="accessKey" value="49df3188-019c-4833-b275-3d6d4ee4630f">
-        <div class="input">
-          <input type="email" name="email" placeholder="メールアドレス" required>
-          <input type="text" name="$code" placeholder="アマギフのコード" required>
-        </div>
-        <input type="submit" value="購入" class="buy-btn">
-      </form>
-    </div>
+    <header>
+      <div>
+        <a href="" class="header-title">ぱけ</a>
+      </div>
+      <div>
+        <a href="#present" class="header-link">配布</a>
+        <a href="#sale" class="header-link">販売</a>
+        <a href="#buy" class="header-link">購入</a>
+        <a href="https://discord.gg/vvzeEr5KVG" target="_blank" class="header-link">Discord</a>
+      </div>
+    </header>
+    <main>
+      <div id="welcome">
+        <h1 class="welcome">Welcome</h1>
+      </div>
+      <div id="present">
+        <h1>配布</h1>
+        <p class="none-txt">現在配布しているものはありません</p>
+      </div>
+      <div id="sale">
+        <h1>販売</h1>
+        <hr>
+        <h2>↓Discord↓</h2>
+        <h3>運営ロール 1500円</h3>
+        <h4>ユーザーをBanできたりする</h4>
+        <h3>オーナーロール 5000円</h3>
+        <h4>管理者権限がある</h4>
+        <hr>
+        <h2>↓ツール↓</h2>
+        <h3>ライセンスキー 2000円</h3>
+        <h4>このライセンスキーでツールを自由にダウンロードできる</h4>
+        <h4>ダウンロードの仕方は購入時に教えます</h4>
+        <hr>
+      </div>
+      <div id="buy">
+        <p class="buy-title">購入</p>
+        <form action="https://api.staticforms.xyz/submit" method="post" style="display: flex;">
+          <input type="hidden" name="accessKey" value="49df3188-019c-4833-b275-3d6d4ee4630f">
+          <div class="input">
+            <input type="email" name="email" class="buy-input" placeholder="メールアドレス" required>
+            <input type="email" name="$Buy" class="buy-input" placeholder="購入するもの" required>
+            <input type="text" name="$Code" class="buy-input" placeholder="アマギフのコード" required>
+          </div>
+          <div class="btn-area">
+            <input type="submit" value="購入" class="buy-btn">
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>&copy;2024 ぱけ</p>
+    </footer>
   </body>
 </html>
